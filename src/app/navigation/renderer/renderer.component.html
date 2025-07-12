@@ -1,0 +1,13 @@
+
+<div [ngSwitch]="currentPage">
+  <div *ngSwitchCase="'home'">
+    <app-mains></app-mains>
+  </div>
+  <div *ngSwitchCase="'about'">
+    <app-about></app-about>
+  </div>
+  <div *ngSwitchCase="'contact'">This is Contact Page</div>
+  <div *ngSwitchDefault>Unknown Page</div>
+</div>
+
+<!-- {{currentPage}} -->

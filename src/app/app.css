@@ -1,0 +1,12 @@
+/* Custom styles for the top banner */
+/* .top-banner { */
+  /* Add your styles here, e.g., background-color, padding, etc. */
+/* } */
+
+/* Custom styles for the bottom banner */
+.bottom-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Add your styles here */
+}
