@@ -117,8 +117,11 @@
   /**
    * Init swiper sliders
    */
+  // Removed Swiper initialization to avoid conflict with Bootstrap Carousel
+  /*
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -130,7 +133,7 @@
       }
     });
   }
-
-  window.addEventListener("load", initSwiper);
+  */
+  // window.addEventListener("load", initSwiper); // Removed Swiper event listener
 
 })();

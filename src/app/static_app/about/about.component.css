@@ -1,0 +1,62 @@
+.testimonials .carousel-control-prev,
+.testimonials .carousel-control-next {
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent dark background */
+  border-radius: 50%; /* Make them round */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.15s ease; /* Add transition for hover effect */
+}
+
+.testimonials .carousel-control-prev:hover,
+.testimonials .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+.testimonials .carousel-control-prev-icon,
+.testimonials .carousel-control-next-icon {
+  width: 20px; /* Ensure icon has a size */
+  height: 20px; /* Ensure icon has a size */
+  background-image: none; /* Remove potential conflicting background image */
+  display: inline-block; /* Ensure icon is displayed */
+}
+
+.testimonials .carousel-control-prev-icon::before {
+  content: '\f284'; /* Bootstrap left chevron icon unicode */
+  font-family: "bootstrap-icons"; /* Use Bootstrap Icons font family */
+  color: #fff; /* Set icon color to white */
+  font-size: 20px;
+}
+
+.testimonials .carousel-control-next-icon::before {
+  content: '\f285'; /* Bootstrap right chevron icon unicode */
+  font-family: "bootstrap-icons"; /* Use Bootstrap Icons font family */
+  color: #fff; /* Set icon color to white */
+  font-size: 20px;
+}
+
+/* Adjustments for testimonial item alignment with new controls */
+.testimonials .carousel-inner {
+  padding: 0 50px; /* Add padding to inner to make space for controls */
+}
+
+.testimonials .carousel-item {
+  padding: 30px 0; /* Adjust padding */
+}
+
+.testimonials .testimonial-item {
+  margin: 0; /* Remove margin if inner padding is used */
+}
+
+@media (max-width: 767px) {
+  .testimonials .carousel-inner {
+    padding: 0 15px; /* Adjust padding for smaller screens */
+  }
+
+  .testimonials .carousel-item {
+    padding: 15px 0; /* Adjust padding for smaller screens */
+  }
+}
+

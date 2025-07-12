@@ -1,7 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { NavigationService } from '../../navigation/global/sevices/navigation.service';
-import Swiper from 'swiper';
-import { SwiperOptions } from 'swiper/types'; // Import SwiperOptions type for better type safety
+declare const PureCounter: any;
+declare const aosInit: any;
+declare const bootstrap: any;
+
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -11,36 +13,26 @@ import { SwiperOptions } from 'swiper/types'; // Import SwiperOptions type for b
 })
 export class AboutComponent implements OnInit, AfterViewInit {
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    const swiperConfig: SwiperOptions = {
-      loop: true,
-      speed: 600,
-      autoplay: {
-        delay: 5000
-      },
-      slidesPerView: "auto",
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-        enabled:true
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 40
-        },
-        1200: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        }
+    if (isPlatformBrowser(this.platformId)) {
+      
+      // Initialize PureCounter script if available
+      if (typeof (window as any).PureCounter !== 'undefined') {
+        new (window as any).PureCounter();
       }
-    };
 
-    new Swiper('.swiper', swiperConfig);
+      // Initialize Bootstrap Carousel
+      const testimonialCarousel = document.getElementById('testimonialCarousel');
+      if (testimonialCarousel) {
+        new bootstrap.Carousel(testimonialCarousel);
+      }
+      
+    }
   }
 
 }
