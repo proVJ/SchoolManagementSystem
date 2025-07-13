@@ -1,7 +1,7 @@
 
-<div *ngIf="currentPage!=null">
+<div *ngIf="currentPage$ | async as page">
   
-    <div [ngSwitch]="currentPage">
+    <div [ngSwitch]="page">
     
       <div *ngSwitchCase="'home'">
         <app-mains></app-mains>
@@ -9,7 +9,10 @@
       <div *ngSwitchCase="'about'">
         <app-about></app-about>
       </div>
-      <div *ngSwitchCase="'contact'">This is Contact Page</div>
+      <div *ngSwitchCase="'courses'">
+        <app-cources></app-cources>
+      </div>
+      <ng-container *ngSwitchCase="'contact'">This is Contact Page</ng-container>
       <!-- <div *ngSwitchDefault>Unknown Page</div> -->
     </div>
 
