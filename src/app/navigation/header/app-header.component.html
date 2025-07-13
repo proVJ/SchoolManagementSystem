@@ -8,7 +8,7 @@
       </a>
       
       <nav id="navmenu" class="navmenu">
-        <ul>
+        <ul>          
           <li><a routerLink="/" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'home' ? 'active' : ''" >Home<br></a></li>
           <li><a routerLink="/about" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'about' ? 'active' : ''" >About</a></li>
           <li><a routerLink="/courses" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'courses' ? 'active' : ''" >Courses</a></li>

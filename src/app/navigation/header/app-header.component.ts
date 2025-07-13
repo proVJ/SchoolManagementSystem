@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common'; // Import AsyncPipe and CommonModule
 import { BehaviorSubject, Observable, Subject, filter, takeUntil } from 'rxjs';
@@ -9,6 +9,7 @@ import { BehaviorSubject, Observable, Subject, filter, takeUntil } from 'rxjs';
   styleUrls: ['./app-header.component.css'],
   imports: [RouterLink, CommonModule], // Add CommonModule here
   standalone: true // Assuming this is a standalone component based on imports array usage
+  
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {
   private _currentPageSubject = new BehaviorSubject<string | null>('home'); // Initialize with 'home'
