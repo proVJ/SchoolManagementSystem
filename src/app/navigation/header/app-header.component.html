@@ -4,13 +4,13 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="app/assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">School Management</h1>
+        <h1 class="sitename">School Mgmt</h1>
       </a>
   
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a routerLink="/" [class]="this.currentPage=='home'?'active':''" >Home<br></a></li>
-          <li><a routerLink="/about" [class]="this.currentPage=='about'?'active':''" >About</a></li>
+          <li><a routerLink="/" [class]="currentPage !== null && currentPage === 'home' ? 'active' : ''" >Home<br></a></li>
+          <li><a routerLink="/about" [class]="currentPage !== null && currentPage === 'about' ? 'active' : ''" >About</a></li>
           <li><a routerLink="/courses">Courses</a></li>
           <li><a routerLink="/trainers">Trainers</a></li>
           <li><a routerLink="/events">Events</a></li>

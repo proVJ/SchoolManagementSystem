@@ -12,20 +12,19 @@ import { filter } from 'rxjs';
   imports: [MainsComponent, CommonModule, AboutComponent]
 })
 export class RendererComponent implements OnInit {
-  currentPage: string ="home";
+  currentPage: string | null = null;
 
-constructor(private router: Router) { }
+  constructor(private router: Router) { }
 
-ngOnInit(): void {
-  this.router.events.pipe(
-    filter(event => event instanceof NavigationEnd)
-  ).subscribe((event: NavigationEnd) => {
-    const url = event.urlAfterRedirects;
-    this.currentPage = url.split('/').filter(Boolean).pop() || 'home';  // Default to 'home' if root
-  });
-  
-}
-
-
+  ngOnInit(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      const url = event.urlAfterRedirects;
+      // Set currentPage only if a valid segment is found, otherwise it remains null initially
+      this.currentPage = url.split('/').filter(Boolean).pop() || null;
+      this.currentPage = this.currentPage==null ? 'home' : this.currentPage;
+    });
+  }
 
 }
