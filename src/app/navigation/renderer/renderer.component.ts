@@ -5,12 +5,16 @@ import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject, filter, takeUntil } from 'rxjs';
 import { MainsComponent } from '../../static_app/main/mains-component/mains-component';
 import { CourcesComponent } from "../../static_app/cources/cources.component";
+import { TrainersComponent } from "../../static_app/trainers/trainers.component";
+import { EventsComponent } from "../../static_app/events/events.component";
+import { PricingComponent } from "../../static_app/pricing/pricing.component";
+import { ContactusComponent } from "../../static_app/contactus/contactus.component";
 
 @Component({
   selector: 'app-renderer',
   templateUrl: './renderer.component.html',
   styleUrls: ['./renderer.component.css'],
-  imports: [MainsComponent, CommonModule, AboutComponent, CourcesComponent]
+  imports: [MainsComponent, CommonModule, AboutComponent, CourcesComponent, TrainersComponent, EventsComponent, PricingComponent, ContactusComponent]
 })
 export class RendererComponent implements OnInit, OnDestroy {
 

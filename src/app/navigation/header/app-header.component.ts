@@ -12,6 +12,7 @@ import { BehaviorSubject, Observable, Subject, filter, takeUntil } from 'rxjs';
   
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {
+
   private _currentPageSubject = new BehaviorSubject<string | null>('home'); // Initialize with 'home'
   currentPage$: Observable<string | null> = this._currentPageSubject.asObservable();
 
@@ -29,6 +30,10 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
       page = page == null ? 'home' : page;
       this._currentPageSubject.next(page); // Emit the new page value
     });
+  }
+
+  getActive(pageName: string) {
+    return this._currentPageSubject.value == pageName ? 'active' : '';
   }
 
   ngOnDestroy(): void {

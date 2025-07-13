@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
   
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="/" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="app/assets/img/logo.png" alt=""> -->
         <h1 class="sitename">School Mgmt</h1>
@@ -9,13 +9,14 @@
       
       <nav id="navmenu" class="navmenu">
         <ul>          
-          <li><a routerLink="/" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'home' ? 'active' : ''" >Home<br></a></li>
-          <li><a routerLink="/about" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'about' ? 'active' : ''" >About</a></li>
-          <li><a routerLink="/courses" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'courses' ? 'active' : ''" >Courses</a></li>
-          <li><a routerLink="/trainers">Trainers</a></li>
-          <li><a routerLink="/events">Events</a></li>
-          <li><a routerLink="/pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="/" [class]="getActive('home')" >Home<br></a></li>
+          <li><a href="/about" [class]="getActive('about')" >About</a></li>
+          <li><a href="/courses" [class]="getActive('courses')" >Courses</a></li>
+          <li><a href="/trainers" [class]="getActive('trainers')" >Trainers</a></li>
+          <li><a href="/events" [class]="getActive('events')" >Events</a></li>
+          <li><a href="/pricing" [class]="getActive('pricing')">Pricing</a></li>
+          
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -31,8 +32,8 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li>
-          <li><a routerLink="/contactus">Contact</a></li>
+          </li> -->
+          <li><a href="/contactus" [class]="(currentPage$ | async) !== null && (currentPage$ | async) === 'contactus' ? 'active' : ''">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
