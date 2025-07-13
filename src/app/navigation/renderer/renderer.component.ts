@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainsComponent } from "../main/mains-component/mains-component";
 import { AboutComponent } from "../../static_app/about/about.component";
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { MainsComponent } from '../../static_app/main/mains-component/mains-component';
 
 @Component({
   selector: 'app-renderer',
