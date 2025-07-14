@@ -1,7 +1,18 @@
 
 <app-header></app-header>  
 
-<app-renderer></app-renderer>
+<!-- <app-renderer></app-renderer> -->
+<div *ngIf="currentPage$ | async as page">  
+    
+    <!-- Conditional rendering based on currentPage$ -->
+<app-mains *ngIf="(currentPage$ | async) === 'home'; else routerOutletTemplate"></app-mains>
+
+<!-- Template for the else case (when currentPage$ is not 'home') -->
+<ng-template #routerOutletTemplate>
+  <router-outlet></router-outlet>
+</ng-template>
+    
+</div>
 
 <app-footer></app-footer>
   
